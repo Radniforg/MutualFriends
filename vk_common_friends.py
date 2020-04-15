@@ -29,8 +29,8 @@ def mutual_friends(token, user1_id, user2_id):
     )
     temp_dict = response.json()
     ids = ''
-    for id in temp_dict['response']:
-        ids = ids + ', ' + str(id)
+    for new_id in temp_dict['response']:
+        ids = ids + ', ' + str(new_id)
     user_response = requests.get(
         'https://api.vk.com/method/users.get',
         params={
@@ -39,13 +39,10 @@ def mutual_friends(token, user1_id, user2_id):
             'v': 5.103
         }
     )
-    MutualFriendsList = []
+    mutual_friends_list = []
     for friends in user_response.json()['response']:
-        MutualFriendsList.append(User(friends['id'], friends['first_name'], friends['last_name']))
-    return MutualFriendsList
-
-user1 = User(6293784, 'Иван', 'Александров')
-user2 = User(4243253, 'Елена,', 'Александрова')
+        mutual_friends_list.append(User(friends['id'], friends['first_name'], friends['last_name']))
+    return mutual_friends_list
 
 APP_ID = 7412577
 OAUTH_URL = 'https://oauth.vk.com/authorize'
@@ -56,9 +53,10 @@ OAUTH_PARAMS = {
     'response_type': 'token',
     'v': 5.52
 }
-TOKEN = 'b9e91fda083b778cc96fedf9746bb74a77d2d0a25b755f4b2e1c912047f264bb900ac2322c85136b20069'
+TOKEN = ''
 
-print(mutual_friends(TOKEN, user1.user_id, user2.user_id)[0])
+# строка ниже использовалась для проверки работоспособности кода с персональными данными. User1 и User2 задавались вручную
+# print(mutual_friends(TOKEN, user1.user_id, user2.user_id)[0])
 
 
 
