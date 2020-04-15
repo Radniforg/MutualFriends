@@ -53,9 +53,14 @@ OAUTH_PARAMS = {
     'response_type': 'token',
     'v': 5.52
 }
-TOKEN = ''
+print('?'.join((OAUTH_URL, urlencode(OAUTH_PARAMS))))
 
-# строка ниже использовалась для проверки работоспособности кода с персональными данными. User1 и User2 задавались вручную
+#здесь использовались персональные данные
+#TOKEN = ''
+#user1 = User(id, first, last)
+#user2 = User(id, first, last)
+
+# строка ниже использовалась для проверки работоспособности кода
 # print(mutual_friends(TOKEN, user1.user_id, user2.user_id)[0])
 
 
