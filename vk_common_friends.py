@@ -60,15 +60,15 @@ OAUTH_PARAMS = {
     'response_type': 'token',
     'v': 5.52
 }
-#print('?'.join((OAUTH_URL, urlencode(OAUTH_PARAMS))))
+print('?'.join((OAUTH_URL, urlencode(OAUTH_PARAMS))))
 
 #здесь использовались персональные данные
-TOKEN = '48701da4a519b46259657292fb98d809059e42b446e0f3894023138a9ba13e1c4d36b132ee9c32e23754e'
-user1 = User(4243253, 'EL', 'AL')
-user2 = User(23289398, 'AN', 'SE')
+# TOKEN = ''
+# user1 = User('id', 'name', 'surname')
+# user2 = User('id', 'name', 'surname')
 
 # строка ниже использовалась для проверки работоспособности кода
-pprint(user1&user2)
+# pprint(user1&user2)
 
 
 
